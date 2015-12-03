@@ -1,25 +1,25 @@
-# stylep-template
+# stylep-dropdown
 
-Everything you need to get started making a new style pattern.
+A simple dropdown for your next project.
 
 ## Install
 ``` shell
-npm i --save-dev stylep-name
+npm i --save-dev stylep-dropdown
 ```
 
 ## Usage
 ``` css
 /* name.css */
 
-@import “stylep-name”;
+@import “stylep-dropdown”;
 
 .class {
 
   /* Button Design Pattern */
-  @extend %name;
+  @extend %dropdown;
 
   /* Customize your button */
-  @mixin name param, param;
+  @mixin dropdown param, param;
 
   /* or roll your own */
 
@@ -30,7 +30,7 @@ npm i --save-dev stylep-name
 ## Patterns
 Placeholder selectors that contain common styles for structure and basic behavior.
 
-#### `@extend %name-of-pattern;`
+#### `@extend %dropdown;`
 Describe what this pattern does.
 
 ## Styles
@@ -41,11 +41,11 @@ Describe the visual look and feel of this style.
 
 ##### Options
 
-* `$param-name: default-value` Describe what this does
+* `$param-dropdown: default-value` Describe what this does
 
 ##### Example
 ```css
 /* describe in english what this following statement really means in detail */
-@mixin name-of-style default-value;
+@mixin dropdown default-value;
 ```
 
