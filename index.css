@@ -1,0 +1,9 @@
+%name-of-pattern {
+}
+
+@define-mixin name-of-style
+  $param-name: default-value {
+
+  @mixin-content;
+}
+
