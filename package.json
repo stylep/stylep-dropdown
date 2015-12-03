@@ -1,0 +1,38 @@
+{
+  "name": "stylep-button",
+  "version": "0.1.0",
+  "description": "A simple button style pattern for your next project.",
+  "main": "index.css",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1",
+    "postcss-extend": "^1.0.1",
+    "postcss-import": "^7.1.3",
+    "postcss-mixins": "^2.1.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stylep/stylep-button.git"
+  },
+  "keywords": [
+    "stylep",
+    "postcss",
+    "css",
+    "buttons"
+  ],
+  "author": "Stephen Way <stephen@stephenway.net> (http://stephenway.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stylep/stylep-button/issues"
+  },
+  "homepage": "https://github.com/stylep/stylep-button#readme"
+}
