@@ -1,9 +1,47 @@
-%name-of-pattern {
+@import "stylep-alignment";
+
+%dropdown-inline {
+  @extend %start;
+  list-style: none;
+  margin: 2px 0 0;
+  min-width: calc($width - 44px);
+  opacity: 0;
+  padding: 3px;
+  position: relative;
+  visibility: hidden;
+  transition: visibility 0s 2s, opacity .3s linear;
+
+  &.is-active {
+    opacity: 1;
+    visibilty: visible;
+    transition: opacity: .3s linear;
+  }
 }
 
-@define-mixin name-of-style
-  $param-name: default-value {
+@define-mixin dropdown
+  $color-passive: #fff,
+  $color-selected: #efefef,
+  $radius-size: 4px,
+  $width: 144px
+{
+  background-color: $color-passive;
+  border-radius: $radius-size;
+  box-shadow: 0 0 7px #000;
+  color: #000;
 
-  @mixin-content;
+  a {
+    background-color: $color-passive;
+    border-radius: 4px;
+    color: #000;
+    display: block;
+    font-size: 18px;
+    padding: 5px;
+    text-decoration: none;
+    transition: background-color .3s linear;
+
+    &:hover {
+      background-color: $color-selected;
+    }
+  }
 }
 
