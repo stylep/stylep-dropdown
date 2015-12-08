@@ -50,7 +50,7 @@
   $color-passive: #444,
   $color-selected: #e8e8e8,
   $color-text: #444,
-  $color-background: transparent,
+  $color-background: #fff,
   $radius-size: 0,
   $border-width: 1px,
   $shadow: none
@@ -101,12 +101,10 @@
 @define-mixin callout-hollow 
   $color-passive: #fff,
   $border: none,
-  $shadow: 0 0 0 2px #444
+  $shadow: 0 0 0 1px #444
 {
-  &::before { background-color: $color-passive; }
-
-  &::after {
-    background-color: transparent;
+  &::before {
+    background-color: $color-passive;
     box-shadow: $shadow;
   }
 }
