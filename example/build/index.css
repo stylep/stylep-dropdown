@@ -169,7 +169,7 @@ h3 { font-weight: 300; }
 }
 
 .dropdown--hollow {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #444;
   border-radius: 0;
   box-shadow: none;
@@ -177,7 +177,7 @@ h3 { font-weight: 300; }
 }
 
 .dropdown--hollow button {
-  background-color: transparent;
+  background-color: #fff;
   border-radius: 0;
   color: #444;
   position: relative;
@@ -222,11 +222,7 @@ h3 { font-weight: 300; }
 
 .callout--hollow::before {
   background-color: #fff;
-}
-
-.callout--hollow::after {
-  background-color: transparent;
-  box-shadow: 0 0 0 2px #444;
+  box-shadow: 0 0 0 1px #444;
 }
 
 .callout-top {
