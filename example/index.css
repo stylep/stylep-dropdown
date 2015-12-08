@@ -2,8 +2,21 @@
 @import '../index.css';
 
 body {
+  background-color: #E8EBEF;
+  color: #6B6B77;
+  font-family: 'Helvetica Neue';
   overflow-x: hidden;
 }
+
+section {
+  background-color: #fff;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+h1 { font-weight: 100; letter-spacing: 1px; }
+h2 { font-weight: 200; }
+h3 { font-weight: 300; }
 
 .dropdown--inline {
   @extend %dropdown-inline;
@@ -13,6 +26,73 @@ body {
   @extend %dropdown-block;
 }
 
-.dropdown {
-  @mixin dropdown;
+.dropdown--solid {
+  @mixin dropdown-solid;
 }
+
+.dropdown--hollow {
+  @mixin dropdown-hollow;
+}
+
+.callout--inline {
+  @extend %callout-inline;
+}
+
+.callout--solid {
+  @extend %callout-inline;
+  @mixin callout-solid;
+}
+
+.callout--hollow {
+  @extend %callout-inline;
+  @mixin callout-hollow;
+}
+
+.callout-top {
+  @mixin callout-top;
+}
+
+.callout-top-right {
+  @mixin callout-top-right;
+}
+
+.callout-top-left {
+  @mixin callout-top-left;
+}
+
+.callout-bottom {
+  @mixin callout-bottom;
+}
+
+.callout-bottom-right {
+  @mixin callout-bottom-right;
+}
+
+.callout-bottom-left {
+  @mixin callout-bottom-left;
+}
+
+.callout-right {
+  @mixin callout-right;
+}
+
+.callout-right-top {
+  @mixin callout-right-top;
+}
+
+.callout-right-bottom {
+  @mixin callout-right-bottom;
+}
+
+.callout-left {
+  @mixin callout-left;
+}
+
+.callout-left-top {
+  @mixin callout-left-top;
+}
+
+.callout-left-bottom {
+  @mixin callout-left-bottom;
+}
+

@@ -1,7 +1,7 @@
 /* @import stylep-button; */
 /* Button */
 
-.dropdown a {
+.dropdown--inline button, .dropdown--block button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -27,7 +27,7 @@
   z-index: 10;
 }
 
-.dropdown a {
+.dropdown--inline button, .dropdown--block button {
   display: block;
   width: 100%;
 }
@@ -69,23 +69,13 @@
   min-width: 100px;
 }
 
-
 .dropdown--inline, .dropdown--block {
   list-style: none;
-  margin: 2px 0 0;
   opacity: 0;
-  padding: 3px;
+  padding: 0;
   visibility: hidden;
   transition: visibility 0s 2s, opacity .3s linear;
 }
-
-
-/*
-  @extend %start;
-  min-width: 100px;
-  position: relative;
-  */
-
 
 .dropdown--inline.is-active, .dropdown--block.is-active {
   opacity: 1;
@@ -93,35 +83,66 @@
   transition: opacity .3s linear;
 }
 
+.dropdown--inline button, .dropdown--block button {
+  margin: 0;
+  text-align: left;
+}
+
+/* Callout */
+.callout--inline, .callout--solid, .callout--hollow {
+  overflow: visible;
+}
+.callout--inline::before, .callout--inline::after, .callout--solid::before, .callout--solid::after, .callout--hollow::before, .callout--hollow::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.callout--inline::before, .callout--solid::before, .callout--hollow::before {
+  width: 15px;
+  height: 15px;
+}
+.callout--inline::after, .callout--solid::after, .callout--hollow::after {
+  height: 11px;
+  width: 11px;
+  z-index: -1;
+}
+
 body {
+  background-color: #E8EBEF;
+  color: #6B6B77;
+  font-family: 'Helvetica Neue';
   overflow-x: hidden;
 }
 
-.dropdown {
+section {
   background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 7px #000;
-  color: #000;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
-.dropdown li {
-  overflow: hidden;
+h1 { font-weight: 100; letter-spacing: 1px; }
+h2 { font-weight: 200; }
+h3 { font-weight: 300; }
+
+.dropdown--solid {
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+  color: #444;
 }
 
-.dropdown a {
-  background-color: #fff;
-  border-radius: 4px;
-  color: #000;
+.dropdown--solid button {
+  background-color: #f7f7f7;
+  border-radius: 0;
+  color: #444;
   position: relative;
   transition: background-color .3s ease-in-out;
-  margin: 0;
-  text-align: start;
 }
 
-/* @mixin-content; */
-
-.dropdown a::after {
-  border-radius: 4px;
+.dropdown--solid button::after {
+  border-radius: 0;
   box-shadow: none;
   bottom: 0;
   content: '';
@@ -134,10 +155,257 @@ body {
   z-index: 5;
 }
 
-.dropdown a:hover::after {
+.dropdown--solid button:hover::after {
   opacity: 1;
 }
 
-.dropdown a:hover, .dropdown a:focus {
+.dropdown--solid button:hover, .dropdown--solid button:focus {
   background-color: #e8e8e8;
 }
+
+.dropdown--solid button[disabled] {
+  opacity: .35;
+  pointer-events: none;
+}
+
+.dropdown--hollow {
+  background-color: transparent;
+  border: 1px solid #444;
+  border-radius: 0;
+  box-shadow: none;
+  color: #444;
+}
+
+.dropdown--hollow button {
+  background-color: transparent;
+  border-radius: 0;
+  color: #444;
+  position: relative;
+  transition: background-color .3s ease-in-out;
+}
+
+.dropdown--hollow button::after {
+  border-radius: 0;
+  box-shadow: none;
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity .3s ease-in-out;
+  z-index: 5;
+}
+
+.dropdown--hollow button:hover::after {
+  opacity: 1;
+}
+
+.dropdown--hollow button:hover, .dropdown--hollow button:focus {
+  background-color: #e8e8e8;
+}
+
+.dropdown--hollow button[disabled] {
+  opacity: .35;
+  pointer-events: none;
+}
+
+.callout--solid::before {
+  background-color: #f7f7f7;
+}
+
+.callout--solid::after {
+  background-color: transparent;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .5);
+}
+
+.callout--hollow::before {
+  background-color: #fff;
+}
+
+.callout--hollow::after {
+  background-color: transparent;
+  box-shadow: 0 0 0 2px #444;
+}
+
+.callout-top {
+  margin-top: calc(6px * 1.5);
+}
+
+.callout-top::before, .callout-top::after {
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  top: -6px;
+}
+
+.callout-top::before {
+  margin-left: -2%;
+}
+
+.callout-top-right {
+  margin-top: calc(6px * 1.5);
+}
+
+.callout-top-right::before, .callout-top-right::after {
+  bottom: auto;
+  left: auto;
+  right: 6px;
+  top: -6px;
+}
+
+.callout-top-right::before {
+  margin-right: -2%;
+}
+
+.callout-top-left {
+  margin-top: calc(6px * 1.5);
+}
+
+.callout-top-left::before, .callout-top-left::after {
+  bottom: auto;
+  left: 6px;
+  right: auto;
+  top: -6px;
+}
+
+.callout-top-left::before {
+  margin-left: -2%;
+}
+
+.callout-bottom {
+  margin-bottom: calc(6px * 1.5);
+}
+
+.callout-bottom::before, .callout-bottom::after {
+  bottom: -6px;
+  left: 50%;
+  right: auto;
+  top: auto;
+}
+
+.callout-bottom::before {
+  margin-left: -2%;
+}
+
+.callout-bottom-right {
+  margin-bottom: calc(6px * 1.5);
+}
+
+.callout-bottom-right::before, .callout-bottom-right::after {
+  bottom: -6px;
+  left: auto;
+  right: 6px;
+  top: auto;
+}
+
+.callout-bottom-right::before {
+  margin-right: -2%;
+}
+
+.callout-bottom-left {
+  margin-bottom: calc(6px * 1.5);
+}
+
+.callout-bottom-left::before, .callout-bottom-left::after {
+  bottom: -6px;
+  left: 6px;
+  right: auto;
+  top: auto;
+}
+
+.callout-bottom-left::before {
+  margin-left: -2%;
+}
+
+.callout-right {
+  margin-right: calc(6px * 1.5);
+}
+
+.callout-right::before, .callout-right::after {
+  bottom: 50%;
+  left: auto;
+  right: -6px;
+  top: auto;
+}
+
+.callout-right::before {
+  margin-bottom: -1%;
+}
+
+.callout-right-top {
+  margin-right: calc(6px * 1.5);
+}
+
+.callout-right-top::before, .callout-right-top::after {
+  bottom: auto;
+  left: auto;
+  right: -6px;
+  top: 6px;
+}
+
+.callout-right-top::before {
+  margin-top: -2%;
+}
+
+.callout-right-bottom {
+  margin-right: calc(6px * 1.5);
+}
+
+.callout-right-bottom::before, .callout-right-bottom::after {
+  bottom: 6px;
+  left: auto;
+  right: -6px;
+  top: auto;
+}
+
+.callout-right-bottom::before {
+  margin-bottom: -2%;
+}
+
+.callout-left {
+  margin-left: calc(6px * 1.5);
+}
+
+.callout-left::before, .callout-left::after {
+  bottom: 50%;
+  left: -6px;
+  right: auto;
+  top: auto;
+}
+
+.callout-left::before {
+  margin-bottom: -1%;
+}
+
+.callout-left-top {
+  margin-left: calc(6px * 1.5);
+}
+
+.callout-left-top::before, .callout-left-top::after {
+  bottom: auto;
+  left: -6px;
+  right: auto;
+  top: 6px;
+}
+
+.callout-left-top::before {
+  margin-top: -2%;
+}
+
+.callout-left-bottom {
+  margin-left: calc(6px * 1.5);
+}
+
+.callout-left-bottom::before, .callout-left-bottom::after {
+  bottom: 6px;
+  left: -6px;
+  right: auto;
+  top: auto;
+}
+
+.callout-left-bottom::before {
+  margin-bottom: -2%;
+}
+
