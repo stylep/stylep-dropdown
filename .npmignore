@@ -1,0 +1,6 @@
+example/
+.gitignore
+.npmignore
+giticon.png
+gulpfile.js
+
