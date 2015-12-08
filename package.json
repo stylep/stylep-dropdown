@@ -16,7 +16,6 @@
     "postcss-mixins": "^3.0.2",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^1.1.0",
-    "stylep-alignment": "^0.1.1",
     "stylep-button": "^0.1.1",
     "stylep-card": "^0.1.1"
   },
