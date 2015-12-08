@@ -1,5 +1,18 @@
 /* @import stylep-button; */
 @import '../index.css';
 
-/* specific classNames that show off every pattern and style */
+body {
+  overflow-x: hidden;
+}
 
+.dropdown--inline {
+  @extend %dropdown-inline;
+}
+
+.dropdown--block {
+  @extend %dropdown-block;
+}
+
+.dropdown {
+  @mixin dropdown;
+}
