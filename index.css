@@ -1,47 +1,56 @@
 @import "stylep-alignment";
+@import "stylep-button";
+@import "stylep-card";
 
-%dropdown-inline {
-  @extend %start;
+
+%dropdown {
   list-style: none;
   margin: 2px 0 0;
-  min-width: calc($width - 44px);
   opacity: 0;
   padding: 3px;
-  position: relative;
   visibility: hidden;
   transition: visibility 0s 2s, opacity .3s linear;
 
+  /*
+  @extend %start;
+  min-width: 100px;
+  position: relative;
+  */
+
   &.is-active {
     opacity: 1;
-    visibilty: visible;
-    transition: opacity: .3s linear;
+    visibility: visible;
+    transition: opacity .3s linear;
   }
+}
+
+%dropdown-inline {
+  @extend %card-inline;
+  @extend %dropdown;
+}
+
+%dropdown-block {
+  @extend %card-block;
+  @extend %dropdown;
 }
 
 @define-mixin dropdown
   $color-passive: #fff,
-  $color-selected: #efefef,
+  $color-selected: #e8e8e8,
+  $color-text: #000,
   $radius-size: 4px,
-  $width: 144px
+  $width: 144px,
+  $shadow: 0 0 7px #000
 {
-  background-color: $color-passive;
-  border-radius: $radius-size;
-  box-shadow: 0 0 7px #000;
-  color: #000;
+  @mixin card-solid $color-passive, $color-text, $radius-size, $shadow; 
+
+  li { overflow: hidden; }
 
   a {
-    background-color: $color-passive;
-    border-radius: 4px;
-    color: #000;
-    display: block;
-    font-size: 18px;
-    padding: 5px;
-    text-decoration: none;
-    transition: background-color .3s linear;
-
-    &:hover {
-      background-color: $color-selected;
-    }
+    @extend %button-block;
+    @mixin button-solid $color-passive, $color-selected, $color-text, $radius-size;
+    margin: 0;
+    text-align: start;
   }
 }
 
