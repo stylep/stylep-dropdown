@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
 var simplevars = require('postcss-simple-vars');
 var cssimport = require('postcss-import');
@@ -10,6 +11,7 @@ var extend = require('postcss-extend');
 gulp.task('css', function() {
         var processors = [
                 cssimport,
+                autoprefixer(['last 2 versions']),
                 mixins,
                 simplevars,
                 nested,
