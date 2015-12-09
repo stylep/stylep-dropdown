@@ -6,7 +6,10 @@
   "directories": {
     "example": "example"
   },
-  "dependencies": {},
+  "dependencies": {
+    "stylep-button": "^0.1.1",
+    "stylep-card": "^0.1.1"
+  },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "gulp": "^3.9.0",
@@ -15,9 +18,7 @@
     "postcss-import": "^7.1.3",
     "postcss-mixins": "^3.0.2",
     "postcss-nested": "^1.0.0",
-    "postcss-simple-vars": "^1.1.0",
-    "stylep-button": "^0.1.1",
-    "stylep-card": "^0.1.1"
+    "postcss-simple-vars": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
