@@ -74,13 +74,13 @@
   opacity: 0;
   padding: 0;
   visibility: hidden;
-  transition: visibility 0s 2s, opacity .3s linear;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
 .dropdown--inline.is-active, .dropdown--block.is-active {
   opacity: 1;
   visibility: visible;
-  transition: opacity .3s linear;
+  transition: opacity 1s linear;
 }
 
 .dropdown--inline button, .dropdown--block button {
