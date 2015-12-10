@@ -1,6 +1,6 @@
 {
   "name": "stylep-dropdown",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A simple dropdown style pattern for your next project.",
   "main": "index.css",
   "directories": {
