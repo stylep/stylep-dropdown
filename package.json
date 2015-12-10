@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "stylep-button": "^0.1.1",
-    "stylep-card": "^0.1.1"
+    "stylep-card": "^0.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
