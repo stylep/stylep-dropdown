@@ -36,7 +36,7 @@ Describe what this pattern does.
 ## Styles
 Customizable presets that give your pattern a specific style-set.
 
-### name-of-style
+### dropdown-solid
 Describe the visual look and feel of this style.
 
 ##### Options
