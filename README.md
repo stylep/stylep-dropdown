@@ -16,10 +16,10 @@ npm i --save-dev stylep-dropdown
 .class {
 
   /* Button Design Pattern */
-  @extend %dropdown;
+  @extend %dropdown-inline;
 
   /* Customize your button */
-  @mixin dropdown param, param;
+  @mixin dropdown-solid param, param;
 
   /* or roll your own */
 
