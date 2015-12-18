@@ -19,7 +19,7 @@ npm i --save-dev stylep-dropdown
   @extend %dropdown-inline;
 
   /* Customize your button */
-  @mixin dropdown-solid param, param;
+  @mixin dropdown-solid #fff, #efefef, #000;
 
   /* or roll your own */
 
