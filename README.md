@@ -3,8 +3,10 @@
 A simple dropdown for your next project.
 
 ## Install
+You can install using the [spm](https://github.com/stylep/stylep) command or install using npm and the project name.
+
 ``` shell
-npm i --save-dev stylep-dropdown
+spm install dropdown
 ```
 
 ## Usage
