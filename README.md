@@ -11,7 +11,7 @@ spm install dropdown
 
 ## Usage
 ``` css
-/* name.css */
+/* dropdown.css */
 
 @import “stylep-dropdown”;
 
