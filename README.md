@@ -52,3 +52,5 @@ Describe the visual look and feel of this style.
 @mixin dropdown default-value;
 ```
 
+## License
+This project is licensed under the MIT [license](LICENSE).
