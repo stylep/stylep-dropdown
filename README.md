@@ -1,5 +1,5 @@
 # stylep-dropdown
-<img src=https://avatars1.githubusercontent.com/u/16121328?v=3&s=200 title=stylep-button align=right height=95>
+<img src=https://avatars1.githubusercontent.com/u/16121328?v=3&s=200 title=stylep align=right height=95>
 
 A simple dropdown for your next project.
 
@@ -18,10 +18,10 @@ spm install dropdown
 
 .class {
 
-  /* Button Design Pattern */
+  /* Dropdown Design Pattern */
   @extend %dropdown-inline;
 
-  /* Customize your button */
+  /* Customize your dropdown */
   @mixin dropdown-solid #fff, #efefef, #000;
 
   /* or roll your own */
