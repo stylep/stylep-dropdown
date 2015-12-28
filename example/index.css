@@ -1,4 +1,4 @@
-/* @import stylep-button; */
+/* @import stylep-dropdown; */
 @import '../index.css';
 
 body {
@@ -18,25 +18,15 @@ h1 { font-weight: 100; letter-spacing: 1px; }
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
 
-.dropdown--inline {
-  @extend %dropdown-inline;
-}
+.dropdown--inline { @extend %dropdown-inline; }
 
-.dropdown--block {
-  @extend %dropdown-block;
-}
+.dropdown--block { @extend %dropdown-block; }
 
-.dropdown--solid {
-  @mixin dropdown-solid;
-}
+.dropdown--solid { @mixin dropdown-solid; }
 
-.dropdown--hollow {
-  @mixin dropdown-hollow;
-}
+.dropdown--hollow { @mixin dropdown-hollow; }
 
-.callout--inline {
-  @extend %callout-inline;
-}
+.callout--inline { @extend %callout-inline; }
 
 .callout--solid {
   @extend %callout-inline;
@@ -48,51 +38,27 @@ h3 { font-weight: 300; }
   @mixin callout-hollow;
 }
 
-.callout-top {
-  @mixin callout-top;
-}
+.callout-top { @mixin callout-top; }
 
-.callout-top-right {
-  @mixin callout-top-right;
-}
+.callout-top-right { @mixin callout-top-right; }
 
-.callout-top-left {
-  @mixin callout-top-left;
-}
+.callout-top-left { @mixin callout-top-left; }
 
-.callout-bottom {
-  @mixin callout-bottom;
-}
+.callout-bottom { @mixin callout-bottom; }
 
-.callout-bottom-right {
-  @mixin callout-bottom-right;
-}
+.callout-bottom-right { @mixin callout-bottom-right; }
 
-.callout-bottom-left {
-  @mixin callout-bottom-left;
-}
+.callout-bottom-left { @mixin callout-bottom-left; }
 
-.callout-right {
-  @mixin callout-right;
-}
+.callout-right { @mixin callout-right; }
 
-.callout-right-top {
-  @mixin callout-right-top;
-}
+.callout-right-top { @mixin callout-right-top; }
 
-.callout-right-bottom {
-  @mixin callout-right-bottom;
-}
+.callout-right-bottom { @mixin callout-right-bottom; }
 
-.callout-left {
-  @mixin callout-left;
-}
+.callout-left { @mixin callout-left; }
 
-.callout-left-top {
-  @mixin callout-left-top;
-}
+.callout-left-top { @mixin callout-left-top; }
 
-.callout-left-bottom {
-  @mixin callout-left-bottom;
-}
+.callout-left-bottom { @mixin callout-left-bottom; }
 
