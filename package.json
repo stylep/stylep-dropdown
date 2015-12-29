@@ -7,7 +7,7 @@
     "example": "example"
   },
   "dependencies": {
-    "stylep-button": "^0.2.0",
+    "stylep-button": "^0.3.0",
     "stylep-card": "^0.2.0"
   },
   "devDependencies": {
