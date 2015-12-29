@@ -16,10 +16,10 @@ spm install dropdown
 
 @import “stylep-dropdown”;
 
-.class {
+.dropdown {
 
   /* Dropdown Design Pattern */
-  @extend %dropdown-inline;
+  @mixin dropdown-inline;
 
   /* Customize your dropdown */
   @mixin dropdown-solid #fff, #efefef, #000;
@@ -33,24 +33,76 @@ spm install dropdown
 ## Patterns
 Placeholder selectors that contain common styles for structure and basic behavior.
 
-#### `@extend %dropdown;`
-Describe what this pattern does.
+#### `dropdown`
+Simple mechanics of how all dropdowns are drawn.
+
+##### Options
+
+* `$dropdown-padding: 0` Option to add space inside the dropdown
+
+#### `dropdown-inline`
+A inline verison of the dropdown.
+
+##### Options
+
+* `$dropdown-padding: 0`
+* `$dropdown-margin: 0`
+* `$dropdown-min-width: 100px`
+
+#### `dropdown-block`
+A block version of the dropdown.
+
+##### Options
+
+* `$dropdown-padding: 0`
+* `$dropdown-margin: 0`
+
+#### `dropdown-callout-<position>`
+Places the dropdown-callout pinned to the main dropdown in the following accepted positions `top`, `top-right`, `top-left`, `bottom`, `bottom-right`, `bottom-left`, `right`, `right-top`, `right-bottom`, `left`, `left-top`, `left-top`, `left-bottom`.
+
+##### Options
+
+* `$offset: 6px`
 
 ## Styles
 Customizable presets that give your pattern a specific style-set.
 
-### dropdown-solid
-Describe the visual look and feel of this style.
+#### `dropdown-solid`
+A dropdown with a solid background
 
 ##### Options
 
-* `$param-dropdown: default-value` Describe what this does
+* `$dropdown-color: #f7f7f7`
+* `$dropdown-selected-color: #e8e8e8`
+* `$dropdown-text-color: #444`
+* `$dropdown-radius: 0`
+* `$dropdown-shadow: 0 2px 2px rgba(0, 0, 0, .4)`
 
-##### Example
-```css
-/* describe in english what this following statement really means in detail */
-@mixin dropdown default-value;
-```
+#### `dropdown-hollow`
+A dropdown with a hollow background
+
+##### Options
+
+* `$dropdown-color: #444`
+* `$dropdown-selected-color: #e8e8e8`
+* `$dropdown-background-color: #fff`
+* `$dropdown-border-width: 1px`
+
+#### `dropdown-callout-solid`
+A solid callout for a dropdown
+
+##### Options
+
+* `$dropdown-callout-color: #f7f7f7`
+* `$dropdown-callout-shadow: 0 0 2px 1px rgba(0, 0, 0, .5)`
+
+#### `dropdown-callout-hollow`
+A hollow callout for a dropdown
+
+##### Options
+
+* `$dropdown-callout-color: #fff`
+* `$dropdown-callout-shadow: 0 0 0 1px #444`
 
 ## License
 This project is licensed under the MIT [license](LICENSE).
