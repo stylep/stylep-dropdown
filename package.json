@@ -1,24 +1,25 @@
 {
   "name": "stylep-dropdown",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "A simple dropdown style pattern for your next project.",
   "main": "index.css",
   "directories": {
     "example": "example"
   },
   "dependencies": {
-    "stylep-button": "^0.1.1",
-    "stylep-card": "^0.1.2"
+    "stylep-button": "^0.2.0",
+    "stylep-card": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "gulp": "^3.9.0",
     "gulp-postcss": "^6.0.1",
-    "postcss-extend": "^1.0.1",
+		"gulp-util": "^3.0.7",
     "postcss-import": "^7.1.3",
-    "postcss-mixins": "^3.0.2",
+		"postcss-mixins": "^3.0.2",
     "postcss-nested": "^1.0.0",
-    "postcss-simple-vars": "^1.1.0"
+		"postcss-reporter": "^1.3.0",
+    "stylelint": "^3.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
