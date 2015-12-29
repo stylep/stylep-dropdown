@@ -1,112 +1,9 @@
 /* @import stylep-dropdown; */
-/* Button */
+/* Button Patterns */
 
-.dropdown--inline button, .dropdown--block button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: initial;
-  border-width: 0;
-  cursor: pointer;
-  display: inline-block;
-  padding: 13px 18px;
-  position: relative;
-  line-height: 1;
-  margin: 0 3% 3% 0;
-  max-width: 100%;
-  min-width: 44px;
-  outline: 0;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  z-index: 10;
-}
-
-.dropdown--inline button, .dropdown--block button {
-  display: block;
-  width: 100%;
-}
-
-/* Button Group */
-
-%button-group-inline, %button-group-block {
-  box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 1 auto;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-bottom: 3%;
-}
-
-%button-group-inline button, %button-group-block button {
-  margin-right: 1px;
-  margin-bottom: 1px;
-}
-.dropdown--inline, .dropdown--block {
-  margin: 0 0 1em;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-
-.dropdown--inline {
-  display: inline-block;
-  max-width: 100%;
-  min-height: 100px;
-  min-width: 100px;
-}
-
-.dropdown--inline, .dropdown--block {
-  list-style: none;
-  opacity: 0;
-  padding: 0;
-  visibility: hidden;
-  transition: visibility 0s .1s, opacity 1s linear;
-}
-
-.dropdown--inline.is-active, .dropdown--block.is-active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity .1s linear;
-}
-
-.dropdown--inline button, .dropdown--block button {
-  margin: 0;
-  text-align: left;
-}
+/* Button Styles */
 
 /* Callout */
-.callout--inline, .callout--solid, .callout--hollow {
-  overflow: visible;
-}
-.callout--inline::before, .callout--inline::after, .callout--solid::before, .callout--solid::after, .callout--hollow::before, .callout--hollow::after {
-  content: '';
-  position: absolute;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.callout--inline::before, .callout--solid::before, .callout--hollow::before {
-  width: 15px;
-  height: 15px;
-}
-.callout--inline::after, .callout--solid::after, .callout--hollow::after {
-  height: 11px;
-  width: 11px;
-  z-index: -1;
-}
 
 body {
   background-color: #E8EBEF;
@@ -125,19 +22,82 @@ h1 { font-weight: 100; letter-spacing: 1px; }
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
 
-.dropdown--solid { background-color: #f7f7f7; border: none; border-radius: 0; box-shadow: 0 2px 2px rgba(0, 0, 0, .4); color: #444; }
+.dropdown--inline { display: inline-block; margin: 0; max-width: 100%; min-width: 100px; overflow: hidden; position: relative; z-index: 1; /* @mixin fade-out; */ list-style: none; opacity: 0; padding: 0; transition: visibility 0s .1s, opacity 1s linear; visibility: hidden; }
 
-.dropdown--solid button {
-  background-color: #f7f7f7;
-  border-radius: 0;
-  color: #444;
-  position: relative;
-  transition: background-color .3s ease-in-out;
+.dropdown--inline.is-active {/* @mixin fade-in; */
+  opacity: 1;
+  transition: opacity .1s linear;
+  visibility: visible;
 }
 
-.dropdown--solid button::after {
-  border-radius: 0;
-  box-shadow: none;
+.dropdown--inline button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: initial;
+  border-width: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  max-width: 100%;
+  min-width: 44px;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  z-index: 11;
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+}
+.dropdown--block { margin: 0; overflow: hidden; position: relative; z-index: 1; /* @mixin fade-out; */ list-style: none; opacity: 0; padding: 0; transition: visibility 0s .1s, opacity 1s linear; visibility: hidden; }
+.dropdown--block.is-active {/* @mixin fade-in; */
+  opacity: 1;
+  transition: opacity .1s linear;
+  visibility: visible;
+}
+.dropdown--block button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: initial;
+  border-width: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  max-width: 100%;
+  min-width: 44px;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  z-index: 11;
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+}
+.dropdown--solid { background-color: #f7f7f7; box-shadow: 0 2px 2px rgba(0, 0, 0, .4); color: #444; border-radius: 0; }
+.dropdown--solid button:not([class]) {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  color: #444;
+  transition: background .3s ease-in-out, color .3s ease-in-out;
+}
+.dropdown--solid button:not([class])::after {
   bottom: 0;
   content: '';
   left: 0;
@@ -145,36 +105,34 @@ h3 { font-weight: 300; }
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity .3s ease-in-out;
   z-index: 5;
 }
-
-.dropdown--solid button:hover::after {
+.dropdown--solid button:not([class]):hover::after {
   opacity: 1;
 }
-
-.dropdown--solid button:hover, .dropdown--solid button:focus {
-  background-color: #e8e8e8;
-}
-
-.dropdown--solid button[disabled] {
-  opacity: .35;
+.dropdown--solid button:not([class])[disabled] {
   pointer-events: none;
 }
-
-.dropdown--hollow { background-color: #fff; border: 1px solid #444; border-radius: 0; box-shadow: none; color: #444; }
-
-.dropdown--hollow button {
+.dropdown--solid button:not([class])::after {
+  border-radius: 4px;
+  box-shadow: 0;
+  transition: opacity .3s ease-in-out;
+}
+.dropdown--solid button:not([class]):hover,
+  .dropdown--solid button:not([class]):focus {
+  background-color: #e8e8e8;
+}
+.dropdown--solid button:not([class])[disabled] {
+  opacity: .35;
+}
+.dropdown--hollow { border-color: #444; border-style: solid; border-width: 1px; color: #444; }
+.dropdown--hollow button:not([class]) {
   background-color: #fff;
-  border-radius: 0;
-  color: #444;
-  position: relative;
-  transition: background-color .3s ease-in-out;
+  border-radius: 4px;
+  color: #fff;
+  transition: background .3s ease-in-out, color .3s ease-in-out;
 }
-
-.dropdown--hollow button::after {
-  border-radius: 0;
-  box-shadow: none;
+.dropdown--hollow button:not([class])::after {
   bottom: 0;
   content: '';
   left: 0;
@@ -182,190 +140,236 @@ h3 { font-weight: 300; }
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity .3s ease-in-out;
   z-index: 5;
 }
-
-.dropdown--hollow button:hover::after {
+.dropdown--hollow button:not([class]):hover::after {
   opacity: 1;
 }
-
-.dropdown--hollow button:hover, .dropdown--hollow button:focus {
-  background-color: #e8e8e8;
-}
-
-.dropdown--hollow button[disabled] {
-  opacity: .35;
+.dropdown--hollow button:not([class])[disabled] {
   pointer-events: none;
 }
+.dropdown--hollow button:not([class])::after {
+  border-radius: 4px;
+  box-shadow: none;
+  transition: opacity .3s ease-in-out;
+}
+.dropdown--hollow button:not([class]):hover,
+  .dropdown--hollow button:not([class]):focus {
+  background-color: #e8e8e8;
+}
+.dropdown--hollow button:not([class])[disabled] {
+  opacity: .35;
+}
+.dropdown-callout--inline { overflow: visible; }
+.dropdown-callout--inline::before,
+  .dropdown-callout--inline::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.dropdown-callout--inline::before {
+  height: 15px;
+  width: 15px;
+}
+.dropdown-callout--inline::after {
+  height: 11px;
+  width: 11px;
+  z-index: -1;
+}
 
-.callout--solid::before {
+.dropdown-callout--solid {
+  overflow: visible;
+}
+
+.dropdown-callout--solid::before,
+  .dropdown-callout--solid::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.dropdown-callout--solid::before {
+  height: 15px;
+  width: 15px;
+}
+
+.dropdown-callout--solid::after {
+  height: 11px;
+  width: 11px;
+  z-index: -1;
+}
+
+.dropdown-callout--solid::before {
   background-color: #f7f7f7;
 }
 
-.callout--solid::after {
+.dropdown-callout--solid::after {
   background-color: transparent;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, .5);
 }
 
-.callout--hollow::before {
+.dropdown-callout--hollow {
+  overflow: visible;
+}
+
+.dropdown-callout--hollow::before,
+  .dropdown-callout--hollow::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.dropdown-callout--hollow::before {
+  height: 15px;
+  width: 15px;
+}
+
+.dropdown-callout--hollow::after {
+  height: 11px;
+  width: 11px;
+  z-index: -1;
+}
+
+.dropdown-callout--hollow::before {
   background-color: #fff;
   box-shadow: 0 0 0 1px #444;
 }
 
-.callout-top { margin-top: calc(6px * 1.5); }
+.dropdown-callout-top { margin-top: calc(6px * 1.5); }
 
-.callout-top::before, .callout-top::after {
+.dropdown-callout-top::before,
+  .dropdown-callout-top::after {
   bottom: auto;
   left: 50%;
   right: auto;
   top: -6px;
 }
 
-.callout-top::before {
+.dropdown-callout-top::before {
   margin-left: -2%;
 }
-
-.callout-top-right { margin-top: calc(6px * 1.5); }
-
-.callout-top-right::before, .callout-top-right::after {
+.dropdown-callout-top-right { margin-top: calc(6px * 1.5); }
+.dropdown-callout-top-right::before,
+  .dropdown-callout-top-right::after {
   bottom: auto;
   left: auto;
   right: 6px;
   top: -6px;
 }
-
-.callout-top-right::before {
+.dropdown-callout-top-right::before {
   margin-right: -2%;
 }
-
-.callout-top-left { margin-top: calc(6px * 1.5); }
-
-.callout-top-left::before, .callout-top-left::after {
+.dropdown-callout-top-left { margin-top: calc(6px * 1.5); }
+.dropdown-callout-top-left::before,
+  .dropdown-callout-top-left::after {
   bottom: auto;
   left: 6px;
   right: auto;
   top: -6px;
 }
-
-.callout-top-left::before {
+.dropdown-callout-top-left::before {
   margin-left: -2%;
 }
-
-.callout-bottom { margin-bottom: calc(6px * 1.5); }
-
-.callout-bottom::before, .callout-bottom::after {
+.dropdown-callout-bottom { margin-bottom: calc(6px * 1.5); }
+.dropdown-callout-bottom::before,
+  .dropdown-callout-bottom::after {
   bottom: -6px;
   left: 50%;
   right: auto;
   top: auto;
 }
-
-.callout-bottom::before {
+.dropdown-callout-bottom::before {
   margin-left: -2%;
 }
-
-.callout-bottom-right { margin-bottom: calc(6px * 1.5); }
-
-.callout-bottom-right::before, .callout-bottom-right::after {
+.dropdown-callout-bottom-right { margin-bottom: calc(6px * 1.5); }
+.dropdown-callout-bottom-right::before,
+  .dropdown-callout-bottom-right::after {
   bottom: -6px;
   left: auto;
   right: 6px;
   top: auto;
 }
-
-.callout-bottom-right::before {
+.dropdown-callout-bottom-right::before {
   margin-right: -2%;
 }
-
-.callout-bottom-left { margin-bottom: calc(6px * 1.5); }
-
-.callout-bottom-left::before, .callout-bottom-left::after {
+.dropdown-callout-bottom-left { margin-bottom: calc(6px * 1.5); }
+.dropdown-callout-bottom-left::before,
+  .dropdown-callout-bottom-left::after {
   bottom: -6px;
   left: 6px;
   right: auto;
   top: auto;
 }
-
-.callout-bottom-left::before {
+.dropdown-callout-bottom-left::before {
   margin-left: -2%;
 }
-
-.callout-right { margin-right: calc(6px * 1.5); }
-
-.callout-right::before, .callout-right::after {
+.dropdown-callout-right { margin-right: calc(6px * 1.5); }
+.dropdown-callout-right::before,
+  .dropdown-callout-right::after {
   bottom: 50%;
   left: auto;
   right: -6px;
   top: auto;
 }
-
-.callout-right::before {
+.dropdown-callout-right::before {
   margin-bottom: -1%;
 }
-
-.callout-right-top { margin-right: calc(6px * 1.5); }
-
-.callout-right-top::before, .callout-right-top::after {
+.dropdown-callout-right-top { margin-right: calc(6px * 1.5); }
+.dropdown-callout-right-top::before,
+  .dropdown-callout-right-top::after {
   bottom: auto;
   left: auto;
   right: -6px;
   top: 6px;
 }
-
-.callout-right-top::before {
+.dropdown-callout-right-top::before {
   margin-top: -2%;
 }
-
-.callout-right-bottom { margin-right: calc(6px * 1.5); }
-
-.callout-right-bottom::before, .callout-right-bottom::after {
+.dropdown-callout-right-bottom { margin-right: calc(6px * 1.5); }
+.dropdown-callout-right-bottom::before,
+  .dropdown-callout-right-bottom::after {
   bottom: 6px;
   left: auto;
   right: -6px;
   top: auto;
 }
-
-.callout-right-bottom::before {
+.dropdown-callout-right-bottom::before {
   margin-bottom: -2%;
 }
-
-.callout-left { margin-left: calc(6px * 1.5); }
-
-.callout-left::before, .callout-left::after {
+.dropdown-callout-left { margin-left: calc(6px * 1.5); }
+.dropdown-callout-left::before,
+  .dropdown-callout-left::after {
   bottom: 50%;
   left: -6px;
   right: auto;
   top: auto;
 }
-
-.callout-left::before {
+.dropdown-callout-left::before {
   margin-bottom: -1%;
 }
-
-.callout-left-top { margin-left: calc(6px * 1.5); }
-
-.callout-left-top::before, .callout-left-top::after {
+.dropdown-callout-left-top { margin-left: calc(6px * 1.5); }
+.dropdown-callout-left-top::before,
+  .dropdown-callout-left-top::after {
   bottom: auto;
   left: -6px;
   right: auto;
   top: 6px;
 }
-
-.callout-left-top::before {
+.dropdown-callout-left-top::before {
   margin-top: -2%;
 }
-
-.callout-left-bottom { margin-left: calc(6px * 1.5); }
-
-.callout-left-bottom::before, .callout-left-bottom::after {
+.dropdown-callout-left-bottom { margin-left: calc(6px * 1.5); }
+.dropdown-callout-left-bottom::before,
+  .dropdown-callout-left-bottom::after {
   bottom: 6px;
   left: -6px;
   right: auto;
   top: auto;
 }
-
-.callout-left-bottom::before {
+.dropdown-callout-left-bottom::before {
   margin-bottom: -2%;
 }
 

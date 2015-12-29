@@ -18,47 +18,32 @@ h1 { font-weight: 100; letter-spacing: 1px; }
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
 
-.dropdown--inline { @extend %dropdown-inline; }
-
-.dropdown--block { @extend %dropdown-block; }
-
+.dropdown--inline { @mixin dropdown-inline; }
+.dropdown--block { @mixin dropdown-block; }
 .dropdown--solid { @mixin dropdown-solid; }
-
 .dropdown--hollow { @mixin dropdown-hollow; }
+.dropdown-callout--inline { @mixin dropdown-callout-inline; }
 
-.callout--inline { @extend %callout-inline; }
-
-.callout--solid {
-  @extend %callout-inline;
-  @mixin callout-solid;
+.dropdown-callout--solid {
+  @mixin dropdown-callout-inline;
+  @mixin dropdown-callout-solid;
 }
 
-.callout--hollow {
-  @extend %callout-inline;
-  @mixin callout-hollow;
+.dropdown-callout--hollow {
+  @mixin dropdown-callout-inline;
+  @mixin dropdown-callout-hollow;
 }
 
-.callout-top { @mixin callout-top; }
-
-.callout-top-right { @mixin callout-top-right; }
-
-.callout-top-left { @mixin callout-top-left; }
-
-.callout-bottom { @mixin callout-bottom; }
-
-.callout-bottom-right { @mixin callout-bottom-right; }
-
-.callout-bottom-left { @mixin callout-bottom-left; }
-
-.callout-right { @mixin callout-right; }
-
-.callout-right-top { @mixin callout-right-top; }
-
-.callout-right-bottom { @mixin callout-right-bottom; }
-
-.callout-left { @mixin callout-left; }
-
-.callout-left-top { @mixin callout-left-top; }
-
-.callout-left-bottom { @mixin callout-left-bottom; }
+.dropdown-callout-top { @mixin dropdown-callout-top; }
+.dropdown-callout-top-right { @mixin dropdown-callout-top-right; }
+.dropdown-callout-top-left { @mixin dropdown-callout-top-left; }
+.dropdown-callout-bottom { @mixin dropdown-callout-bottom; }
+.dropdown-callout-bottom-right { @mixin dropdown-callout-bottom-right; }
+.dropdown-callout-bottom-left { @mixin dropdown-callout-bottom-left; }
+.dropdown-callout-right { @mixin dropdown-callout-right; }
+.dropdown-callout-right-top { @mixin dropdown-callout-right-top; }
+.dropdown-callout-right-bottom { @mixin dropdown-callout-right-bottom; }
+.dropdown-callout-left { @mixin dropdown-callout-left; }
+.dropdown-callout-left-top { @mixin dropdown-callout-left-top; }
+.dropdown-callout-left-bottom { @mixin dropdown-callout-left-bottom; }
 
