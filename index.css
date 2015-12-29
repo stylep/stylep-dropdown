@@ -1,5 +1,5 @@
-@import "stylep-button";
-@import "stylep-card";
+@import 'stylep-button';
+@import 'stylep-card';
 
 @define-mixin dropdown
   $dropdown-padding: 0 {
@@ -7,14 +7,14 @@
   list-style: none;
   opacity: 0;
   padding: $dropdown-padding;
-  visibility: hidden;
   transition: visibility 0s .1s, opacity 1s linear;
+  visibility: hidden;
 
   &.is-active {
     /* @mixin fade-in; */
     opacity: 1;
-    visibility: visible;
     transition: opacity .1s linear;
+    visibility: visible;
   }
 
   & button {
@@ -44,7 +44,7 @@
   $dropdown-text-color: #444,
   $dropdown-radius: 0,
   $dropdown-shadow: 0 2px 2px rgba(0, 0, 0, .4) {
-  @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow; 
+  @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow;
   border-radius: $dropdown-radius;
 
   & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, $dropdown-radius; }
@@ -63,7 +63,7 @@
 /* Callout */
 @define-mixin dropdown-callout-inline {
   overflow: visible;
-  
+
   &::before,
   &::after {
     content: '';
@@ -72,8 +72,8 @@
   }
 
   &::before {
-    width: 15px;
     height: 15px;
+    width: 15px;
   }
 
   &::after {
@@ -83,10 +83,9 @@
   }
 }
 
-@define-mixin dropdown-callout-solid 
+@define-mixin dropdown-callout-solid
   $dropdown-callout-color: #f7f7f7,
-  $dropdown-callout-shadow: 0 0 2px 1px rgba(0, 0, 0, .5)
-{
+  $dropdown-callout-shadow: 0 0 2px 1px rgba(0, 0, 0, .5) {
   &::before { background-color: $dropdown-callout-color; }
 
   &::after {
@@ -95,17 +94,16 @@
   }
 }
 
-@define-mixin dropdown-callout-hollow 
+@define-mixin dropdown-callout-hollow
   $dropdown-callout-color: #fff,
-  $dropdown-callout-shadow: 0 0 0 1px #444
-{
+  $dropdown-callout-shadow: 0 0 0 1px #444 {
   &::before {
     background-color: $dropdown-callout-color;
     box-shadow: $dropdown-callout-shadow;
   }
 }
 
-@define-mixin dropdown-callout-position 
+@define-mixin dropdown-callout-position
   $top: auto,
   $right: auto,
   $bottom: auto,
