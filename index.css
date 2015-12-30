@@ -43,11 +43,11 @@
   $dropdown-selected-color: #e8e8e8,
   $dropdown-text-color: #444,
   $dropdown-radius: 0,
-  $dropdown-shadow: 0 2px 2px rgba(0, 0, 0, .4) {
+  $dropdown-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
   @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow;
   border-radius: $dropdown-radius;
 
-  & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, $dropdown-radius; }
+  & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, none, $dropdown-radius; }
 }
 
 @define-mixin dropdown-hollow
@@ -90,21 +90,23 @@
 
 @define-mixin dropdown-callout-solid
   $dropdown-callout-color: #f7f7f7,
-  $dropdown-callout-shadow: 0 0 2px 1px rgba(0, 0, 0, .5) {
-  &::before { background-color: $dropdown-callout-color; }
+  $dropdown-callout-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
+  &::before {
+    background-color: $dropdown-callout-color;
+    box-shadow: $dropdown-callout-shadow;
+  }
 
   &::after {
     background-color: transparent;
-    box-shadow: $dropdown-callout-shadow;
   }
 }
 
 @define-mixin dropdown-callout-hollow
   $dropdown-callout-color: #fff,
-  $dropdown-callout-shadow: 0 0 0 1px #444 {
+  $dropdown-callout-border: 1px solid #444 {
   &::before {
     background-color: $dropdown-callout-color;
-    box-shadow: $dropdown-callout-shadow;
+    border: $dropdown-callout-border;
   }
 }
 
@@ -117,92 +119,74 @@
   &::after {
     bottom: $bottom;
     left: $left;
+    margin: auto;
     right: $right;
     top: $top;
+    @mixin-content;
   }
 }
 
-@define-mixin dropdown-callout-top $offset: 6px {
-  @mixin dropdown-callout-position -$offset, auto, auto, 50%;
-  margin-top: calc($offset * 1.5);
-
-  &::before { margin-left: -2%; }
+@define-mixin dropdown-callout-margin $side, $offset: 7.5px {
+  margin-$(side): calc($offset * 1.5);
 }
 
-@define-mixin dropdown-callout-top-right $offset: 6px {
+@define-mixin dropdown-callout-top $offset: 7.5px {
+  @mixin dropdown-callout-margin top;
+  @mixin dropdown-callout-position -$offset, 0, auto, 0;
+}
+
+@define-mixin dropdown-callout-top-right $offset: 7.5px {
+  @mixin dropdown-callout-margin top;
   @mixin dropdown-callout-position -$offset, $offset;
-  margin-top: calc($offset * 1.5);
-
-  &::before { margin-right: -2%; }
 }
 
-@define-mixin dropdown-callout-top-left $offset: 6px {
+@define-mixin dropdown-callout-top-left $offset: 7.5px {
+  @mixin dropdown-callout-margin top;
   @mixin dropdown-callout-position -$offset, auto, auto, $offset;
-  margin-top: calc($offset * 1.5);
-
-  &::before { margin-left: -2%; }
 }
 
-@define-mixin dropdown-callout-bottom $offset: 6px {
-  @mixin dropdown-callout-position auto, auto, -$offset, 50%;
-  margin-bottom: calc($offset * 1.5);
-
-  &::before { margin-left: -2%; }
+@define-mixin dropdown-callout-bottom $offset: 7.5px {
+  @mixin dropdown-callout-margin bottom;
+  @mixin dropdown-callout-position auto, 0, -$offset, 0;
 }
 
-@define-mixin dropdown-callout-bottom-right $offset: 6px {
+@define-mixin dropdown-callout-bottom-right $offset: 7.5px {
+  @mixin dropdown-callout-margin bottom;
   @mixin dropdown-callout-position auto, $offset, -$offset;
-  margin-bottom: calc($offset * 1.5);
-
-  &::before { margin-right: -2%; }
 }
 
-@define-mixin dropdown-callout-bottom-left $offset: 6px {
+@define-mixin dropdown-callout-bottom-left $offset: 7.5px {
+  @mixin dropdown-callout-margin bottom;
   @mixin dropdown-callout-position auto, auto, -$offset, $offset;
-  margin-bottom: calc($offset * 1.5);
-
-  &::before { margin-left: -2%; }
 }
 
-@define-mixin dropdown-callout-right $offset: 6px {
-  @mixin dropdown-callout-position auto, -$offset, 50%;
-  margin-right: calc($offset * 1.5);
-
-  &::before { margin-bottom: -1%; }
+@define-mixin dropdown-callout-right $offset: 7.5px {
+  @mixin dropdown-callout-margin right;
+  @mixin dropdown-callout-position 0, -$offset, 0;
 }
 
-@define-mixin dropdown-callout-right-top $offset: 6px {
+@define-mixin dropdown-callout-right-top $offset: 7.5px {
+  @mixin dropdown-callout-margin right;
   @mixin dropdown-callout-position $offset, -$offset;
-  margin-right: calc($offset * 1.5);
-
-  &::before { margin-top: -2%; }
 }
 
-@define-mixin dropdown-callout-right-bottom $offset: 6px {
+@define-mixin dropdown-callout-right-bottom $offset: 7.5px {
+  @mixin dropdown-callout-margin right;
   @mixin dropdown-callout-position auto, -$offset, $offset;
-  margin-right: calc($offset * 1.5);
-
-  &::before { margin-bottom: -2%; }
 }
 
-@define-mixin dropdown-callout-left $offset: 6px {
-  @mixin dropdown-callout-position auto, auto, 50%, -$offset;
-  margin-left: calc($offset * 1.5);
-
-  &::before { margin-bottom: -1%; }
+@define-mixin dropdown-callout-left $offset: 7.5px {
+  @mixin dropdown-callout-margin left;
+  @mixin dropdown-callout-position 0, auto, 0, -$offset;
 }
 
-@define-mixin dropdown-callout-left-top $offset: 6px {
+@define-mixin dropdown-callout-left-top $offset: 7.5px {
+  @mixin dropdown-callout-margin left;
   @mixin dropdown-callout-position $offset, auto, auto, -$offset;
-  margin-left: calc($offset * 1.5);
-
-  &::before { margin-top: -2%; }
 }
 
-@define-mixin dropdown-callout-left-bottom $offset: 6px {
+@define-mixin dropdown-callout-left-bottom $offset: 7.5px {
+  @mixin dropdown-callout-margin left;
   @mixin dropdown-callout-position auto, auto, $offset, -$offset;
-  margin-left: calc($offset * 1.5);
-
-  &::before { margin-bottom: -2%; }
 }
 
