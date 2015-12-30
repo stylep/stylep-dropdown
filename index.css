@@ -52,12 +52,17 @@
 
 @define-mixin dropdown-hollow
   $dropdown-color: #444,
-  $dropdown-selected-color: #e8e8e8,
+  $dropdown-selected-color: #555,
   $dropdown-background-color: #fff,
-  $dropdown-border-width: 1px {
+  $dropdown-border-width: 1px,
+  $dropdown-radius: 0 {
   @mixin card-hollow $dropdown-color, $dropdown-border-width;
 
-  & button:not([class]) { @mixin button-solid $dropdown-background-color, $dropdown-selected-color; }
+  & button:not([class]) {
+    @mixin button-hollow $dropdown-color, #fff, none, $dropdown-radius;
+    background-color: #fff;
+    border: none;
+  }
 }
 
 /* Callout */
