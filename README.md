@@ -20,9 +20,12 @@ spm install dropdown
 
   /* Dropdown Design Pattern */
   @mixin dropdown-inline;
+	@mixin dropdown-callout-inline;
+	@mixin dropdown-callout-top-right;
 
   /* Customize your dropdown */
   @mixin dropdown-solid #fff, #efefef, #000;
+	@mixin dropdown-callout-solid #fff;
 
   /* or roll your own */
 
