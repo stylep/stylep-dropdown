@@ -127,10 +127,13 @@ h3 { font-weight: 300; }
 }
 .dropdown--hollow { border-color: #444; border-style: solid; border-width: 1px; color: #444; }
 .dropdown--hollow button:not([class]) {
-  background-color: #fff;
-  border-radius: 4px;
-  color: #fff;
+  background-color: transparent;
+  border: 1px solid #444;
+  border-radius: 0;
+  color: #444;
   transition: background .3s ease-in-out, color .3s ease-in-out;
+  background-color: #fff;
+  border: none;
 }
 .dropdown--hollow button:not([class])::after {
   bottom: 0;
@@ -149,13 +152,14 @@ h3 { font-weight: 300; }
   pointer-events: none;
 }
 .dropdown--hollow button:not([class])::after {
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow: none;
   transition: opacity .3s ease-in-out;
 }
 .dropdown--hollow button:not([class]):hover,
   .dropdown--hollow button:not([class]):focus {
-  background-color: #e8e8e8;
+  background-color: #444;
+  color: #fff;
 }
 .dropdown--hollow button:not([class])[disabled] {
   opacity: .35;
