@@ -1,6 +1,8 @@
 @import 'stylep-button';
 @import 'stylep-card';
 
+/* Patterns */
+
 @define-mixin dropdown
   $dropdown-padding: 0 {
   /* @mixin fade-out; */
@@ -38,85 +40,30 @@
   @mixin dropdown $dropdown-padding;
 }
 
-@define-mixin dropdown-solid
-  $dropdown-color: #f7f7f7,
-  $dropdown-selected-color: #e8e8e8,
-  $dropdown-text-color: #444,
-  $dropdown-radius: 0,
-  $dropdown-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
-  @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow;
-  border-radius: $dropdown-radius;
-
-  & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, none, $dropdown-radius; }
-}
-
-@define-mixin dropdown-hollow
-  $dropdown-color: #444,
-  $dropdown-selected-color: #555,
-  $dropdown-background-color: #fff,
-  $dropdown-border-width: 1px,
-  $dropdown-radius: 0 {
-  @mixin card-hollow $dropdown-color, $dropdown-border-width;
-
-  & button:not([class]) {
-    @mixin button-hollow $dropdown-color, #fff, none, $dropdown-radius;
-    background-color: #fff;
-    border: none;
-  }
-}
-
-/* Callout */
-@define-mixin dropdown-callout-inline {
+@define-mixin dropdown-callout-inline
+  $dropdown-callout-size: 15px {
   overflow: visible;
 
-  &::before,
-  &::after {
+  &::before {
     content: '';
+    height: $dropdown-callout-size;
     position: absolute;
     transform: rotate(45deg);
-  }
-
-  &::before {
-    height: 15px;
-    width: 15px;
-  }
-
-  &::after {
-    height: 11px;
-    width: 11px;
-    z-index: -1;
+    width: $dropdown-callout-size;
   }
 }
 
-@define-mixin dropdown-callout-solid
-  $dropdown-callout-color: #f7f7f7,
-  $dropdown-callout-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
-  &::before {
-    background-color: $dropdown-callout-color;
-    box-shadow: $dropdown-callout-shadow;
-  }
-
-  &::after {
-    background-color: transparent;
-  }
+@define-mixin dropdown-callout-margin $side, $offset: 7.5px {
+  margin-$(side): calc($offset * 1.5);
 }
 
-@define-mixin dropdown-callout-hollow
-  $dropdown-callout-color: #fff,
-  $dropdown-callout-border: 1px solid #444 {
-  &::before {
-    background-color: $dropdown-callout-color;
-    border: $dropdown-callout-border;
-  }
-}
 
 @define-mixin dropdown-callout-position
   $top: auto,
   $right: auto,
   $bottom: auto,
   $left: auto {
-  &::before,
-  &::after {
+  &::before {
     bottom: $bottom;
     left: $left;
     margin: auto;
@@ -124,10 +71,6 @@
     top: $top;
     @mixin-content;
   }
-}
-
-@define-mixin dropdown-callout-margin $side, $offset: 7.5px {
-  margin-$(side): calc($offset * 1.5);
 }
 
 @define-mixin dropdown-callout-top $offset: 7.5px {
@@ -188,5 +131,49 @@
 @define-mixin dropdown-callout-left-bottom $offset: 7.5px {
   @mixin dropdown-callout-margin left;
   @mixin dropdown-callout-position auto, auto, $offset, -$offset;
+}
+
+/* Styles */
+
+@define-mixin dropdown-solid
+  $dropdown-color: #f7f7f7,
+  $dropdown-selected-color: #e8e8e8,
+  $dropdown-text-color: #444,
+  $dropdown-radius: 0,
+  $dropdown-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
+  @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow;
+  border-radius: $dropdown-radius;
+  & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, none, $dropdown-radius; }
+}
+
+@define-mixin dropdown-hollow
+  $dropdown-color: #444,
+  $dropdown-background-color: #fff,
+  $dropdown-border-width: 1px,
+  $dropdown-radius: 0 {
+  @mixin card-hollow $dropdown-color, $dropdown-border-width;
+  & button:not([class]) {
+    @mixin button-hollow $dropdown-color, #fff, none, $dropdown-radius;
+    background-color: $dropdown-background-color;
+    border: none;
+  }
+}
+
+@define-mixin dropdown-callout-solid
+  $dropdown-callout-color: #f7f7f7,
+  $dropdown-callout-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
+  &::before {
+    background-color: $dropdown-callout-color;
+    box-shadow: $dropdown-callout-shadow;
+  }
+}
+
+@define-mixin dropdown-callout-hollow
+  $dropdown-callout-color: #fff,
+  $dropdown-callout-border: 1px solid #444 {
+  &::before {
+    background-color: $dropdown-callout-color;
+    border: $dropdown-callout-border;
+  }
 }
 
