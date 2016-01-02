@@ -1,7 +1,7 @@
 # stylep-dropdown
 <img src=https://avatars1.githubusercontent.com/u/16121328?v=3&s=200 title=stylep align=right height=95>
 
-A simple dropdown for your next project.
+Dropdown and callout patterns and styles for your next app or form.
 
 ## Install
 You can install using the [spm](https://github.com/stylep/stylep) command or install using npm and the project name.
