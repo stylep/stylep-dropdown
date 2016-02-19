@@ -9,14 +9,16 @@
   list-style: none;
   opacity: 0;
   padding: $dropdown-padding;
-  transition: visibility 0s .1s, opacity 1s linear;
+  transition: visibility 0 2s, z-index 0 2s, opacity 1s ease-in-out;
   visibility: hidden;
+  z-index: -1
 
   &.is-active {
     /* @mixin fade-in; */
     opacity: 1;
-    transition: opacity .1s linear;
+    transition: opacity .1s ease-in-out;
     visibility: visible;
+    z-index: 10;
   }
 
   & button {
