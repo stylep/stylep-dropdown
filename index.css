@@ -1,4 +1,3 @@
-@import 'stylep-button';
 @import 'stylep-card';
 
 /* Patterns */
@@ -19,11 +18,6 @@
     transition: opacity .1s ease-in-out;
     visibility: visible;
     z-index: 10;
-  }
-
-  & button {
-    @mixin button-block 15px, 0;
-    text-align: left;
   }
 }
 
@@ -71,7 +65,6 @@
     margin: auto;
     right: $right;
     top: $top;
-    @mixin-content;
   }
 }
 
@@ -145,7 +138,6 @@
   $dropdown-shadow: 0 0 3px 1px rgba(0, 0, 0, .4) {
   @mixin card-solid $dropdown-color, $dropdown-text-color, $dropdown-shadow;
   border-radius: $dropdown-radius;
-  & button:not([class]) { @mixin button-solid $dropdown-color, $dropdown-selected-color, $dropdown-text-color, none, $dropdown-radius; }
 }
 
 @define-mixin dropdown-hollow
@@ -154,11 +146,6 @@
   $dropdown-border-width: 1px,
   $dropdown-radius: 0 {
   @mixin card-hollow $dropdown-color, $dropdown-border-width;
-  & button:not([class]) {
-    @mixin button-hollow $dropdown-color, #fff, none, $dropdown-radius;
-    background-color: $dropdown-background-color;
-    border: none;
-  }
 }
 
 @define-mixin dropdown-callout-solid
@@ -178,4 +165,3 @@
     border: $dropdown-callout-border;
   }
 }
-
